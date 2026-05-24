@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Direktori UMKM &amp; Kuliner | Kota Baubau</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fbf9f4",
+                    "background": "#fbf9f4",
+                    "on-secondary-container": "#745c00",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffdcc5",
+                    "tertiary": "#592a00",
+                    "on-surface-variant": "#41474e",
+                    "on-secondary-fixed-variant": "#574500",
+                    "secondary": "#735c00",
+                    "surface-variant": "#e4e2dd",
+                    "primary-fixed-dim": "#9bccf6",
+                    "on-primary-fixed-variant": "#0e4b6e",
+                    "surface-container-highest": "#e4e2dd",
+                    "surface-tint": "#2f6388",
+                    "surface-container": "#f0eee9",
+                    "on-background": "#1b1c19",
+                    "outline-variant": "#c1c7cf",
+                    "on-tertiary-container": "#ffad70",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f5f3ee",
+                    "on-primary": "#ffffff",
+                    "surface-dim": "#dbdad5",
+                    "secondary-container": "#fed65b",
+                    "on-tertiary-fixed": "#301400",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#94c5ee",
+                    "outline": "#72787f",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fbf9f4",
+                    "on-primary-fixed": "#001e30",
+                    "primary-container": "#1a5276",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#eae8e3",
+                    "secondary-fixed": "#ffe088",
+                    "inverse-on-surface": "#f2f1ec",
+                    "tertiary-fixed-dim": "#ffb783",
+                    "inverse-surface": "#30312e",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#003b5a",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#241a00",
+                    "on-surface": "#1b1c19",
+                    "secondary-fixed-dim": "#e9c349",
+                    "primary-fixed": "#cbe6ff",
+                    "tertiary-container": "#7b3d00",
+                    "on-tertiary-fixed-variant": "#713700",
+                    "inverse-primary": "#9bccf6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0, 59, 90, 0.2), rgba(0, 59, 90, 0.8));
+        }
+        .gold-border-hover:hover {
+            border-bottom: 2px solid #ffe088;
+        }
+        .custom-shadow {
+            box-shadow: 0px 12px 32px rgba(26, 82, 118, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 glass-nav shadow-sm">
+<div class="flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary">Kota Baubau</div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Jelajah</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Event</a>
+<a class="font-label-md text-label-md text-primary font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-secondary after:rounded-full" href="#">UMKM</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Tentang</a>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="material-symbols-outlined text-primary p-2">search</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-primary/90 transition-all active:scale-95">Masuk</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-[716px] w-full flex items-center justify-center overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A wide cinematic shot of a traditional Baubau market at sunrise, featuring artisans weaving intricate Tenun Buton fabrics with golden threads. The lighting is warm and golden, catching the dust motes in the air and highlighting the rich textures of the textiles. The background shows a clean, modern aesthetic with a focus on heritage craftsmanship in a prestigious coastal setting. Deep blues and vibrant gold accents dominate the color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC78SyLE1EsWPpN_eYJB4UnWP_aOxdhlvzaeTiRQiPeba7ALLQMPNGCzrgwmt0yvKi0rS4GvZHF0BVIhhfEZLBIyXvsCONHr3wArfjAaundnUB7GzD6K91yGbBmHxQbJIV7jdi_d0qTpQHvYIDWGRX0Vh7UNxywQK0aknARIhDA1vBx1PKrsX1S-1sSiYhQmoN9j1X0PKOSAruNUjJZGWuzNqFZwX2emZkNj2LfY1kBBXDpbeAZsggMsQvyCxvtZE8mIOZkpv7dip8u"/>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="relative z-10 text-center px-4 max-w-4xl">
+<h1 class="font-display-lg text-display-lg text-on-primary mb-stack-md">Karya Lokal &amp; Cita Rasa Otentik</h1>
+<p class="font-body-lg text-body-lg text-on-primary/90">Menelusuri jejak kreativitas dan kelezatan dari jantung Kesultanan Buton.</p>
+</div>
+</section>
+<!-- Search & Filter Area -->
+<section class="relative -mt-16 z-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="bg-surface-container-lowest p-stack-lg rounded-xl custom-shadow">
+<div class="flex flex-col md:flex-row gap-stack-md">
+<div class="flex-grow relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface rounded-lg border border-primary/10 focus:border-primary focus:ring-0 font-body-md transition-all" placeholder="Cari 'Tenun Buton' atau 'Kopi Rongi'..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-stack-sm items-center">
+<button class="px-6 py-4 bg-primary text-on-primary rounded-lg font-label-md gold-border-hover flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                        Filter
+                    </button>
+</div>
+</div>
+<div class="flex flex-wrap gap-stack-md mt-stack-lg">
+<button class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-sm font-label-md border-b-2 border-transparent hover:border-secondary transition-all">Semua</button>
+<button class="px-4 py-2 bg-surface-container text-on-surface-variant rounded-sm font-label-md hover:bg-secondary-fixed/30 transition-all">Kerajinan</button>
+<button class="px-4 py-2 bg-surface-container text-on-surface-variant rounded-sm font-label-md hover:bg-secondary-fixed/30 transition-all">Kuliner</button>
+<button class="px-4 py-2 bg-surface-container text-on-surface-variant rounded-sm font-label-md hover:bg-secondary-fixed/30 transition-all">Fashion</button>
+<button class="px-4 py-2 bg-surface-container text-on-surface-variant rounded-sm font-label-md hover:bg-secondary-fixed/30 transition-all">Oleh-oleh</button>
+</div>
+</div>
+</section>
+<!-- UMKM Grid Layout -->
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-lg">
+<!-- Card 1: Tenun Buton -->
+<div class="group bg-surface-container-lowest rounded-lg overflow-hidden custom-shadow transition-transform hover:-translate-y-2">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close up of a premium hand-woven Tenun Buton textile with intricate geometric patterns in deep blue and shimmering gold threads. The lighting is soft, side-lit to emphasize the texture and high-quality craftsmanship. The style is elegant and prestigious, reflecting a modern maritime heritage aesthetic with a clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABOyi93Ur23HZJ0aX0n_HKbabH2OEqORCLkSwc0sL_a20cZ9emBE10APsa_JcmItLWErltWlknSYm40GIH-x0RN11QIwHdaK1PKyjmKqQPQZ7dfMLuC7RnIyrhS_s7PljbkTwMzojBJMBeB24K-D8TtcFZ6LqzsXpo-LtN92SekYCi0ciIK3CDcVluGLpixoc2Vzxes26udKwbyh5apjteneUwzYxYZEAEEYzUy4GdkeOLS37KglXx2rCU2nBN_C-_4V-WXkFzLAzQ"/>
+<div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm text-on-primary px-3 py-1 rounded-sm text-label-md">Fashion</div>
+</div>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Tenun Kamali</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Wastra kebanggaan Buton yang ditenun secara tradisional dengan motif kuno kesultanan.</p>
+<div class="flex justify-between items-center pt-stack-md border-t border-outline-variant">
+<span class="font-label-md text-label-md text-secondary">Premium Range</span>
+<button class="group/btn flex items-center gap-2 font-label-md text-primary hover:text-secondary transition-colors">
+                            Lihat Detail
+                            <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Kopi Rongi -->
+<div class="group bg-surface-container-lowest rounded-lg overflow-hidden custom-shadow transition-transform hover:-translate-y-2">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Artistic shot of roasted coffee beans and a steaming cup of coffee served in a traditional ceramic mug on a rustic wooden table. Soft morning light enters from a window, creating a warm and welcoming atmosphere. The composition is clean and minimalist, highlighting the rich dark tones of the coffee against the sandy neutral tones of the cafe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKrr6G5t5MToeWAhsuQ3HP_f-zQKbw3p9kFujRbpgZnV6NdNe-mE68YaASIEzw5A47LRZQQFdMdVTnvPW9oclIYERQN8oaldsrQowhbpKPVvrkWKAcVlMmHkeJwKJwm4ySGMSH5aG90hXDotk9jdSZiwgKd334giRLzL6Rw7OKwHarooJ51fLIaddv0awAecxKfmQygnSV15DbMh_Jx1StsiR5fiqPymtcCZPbgLmkwcJYK0KSHrUlq8EACryfqv10UtBFs2RLsxR1"/>
+<div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm text-on-primary px-3 py-1 rounded-sm text-label-md">Kuliner</div>
+</div>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Kopi Rongi Tradisi</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Cita rasa kopi robusta pegunungan Buton yang diproses secara alami oleh masyarakat desa Rongi.</p>
+<div class="flex justify-between items-center pt-stack-md border-t border-outline-variant">
+<span class="font-label-md text-label-md text-secondary">Affordable</span>
+<button class="group/btn flex items-center gap-2 font-label-md text-primary hover:text-secondary transition-colors">
+                            Lihat Detail
+                            <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Kerajinan Kerang -->
+<div class="group bg-surface-container-lowest rounded-lg overflow-hidden custom-shadow transition-transform hover:-translate-y-2">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Exquisite home decor items made from polished mother-of-pearl and ocean shells, arranged on a white marble surface. The lighting is bright and airy, capturing the iridescent reflections of the shells. The aesthetic is modern minimalism with a luxurious coastal feel, using a palette of white, pearl, and soft oceanic blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKydAGckoggS0PBlEBGVtbLLrTLKNB3fX9CIBJW4BbLFX_FJfmF_FevKmF_dBokV6t5KseNXa93jTfkiUM9SbqSSDuUxvdVzfWw2oIGBmnCqEAhxganpaaH0rwnGLUlmjFB65HlF3AK1jQ6TNahZfBn_pnnKczAWj0WVCVuhU27v9gR4hy4GQq-EqCPaiNMWVM-sFvfI3axB-s-gZYg8T5U1DXGE7yoZ9WXYGsfE2_ZvwGwSibh5jMgAQegGjOsTQQUG53gxJe_eYf"/>
+<div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm text-on-primary px-3 py-1 rounded-sm text-label-md">Kerajinan</div>
+</div>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Mutiara Laut Baubau</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Dekorasi interior eksklusif yang memanfaatkan kekayaan bahari pesisir pantai Buton.</p>
+<div class="flex justify-between items-center pt-stack-md border-t border-outline-variant">
+<span class="font-label-md text-label-md text-secondary">Mid-Range</span>
+<button class="group/btn flex items-center gap-2 font-label-md text-primary hover:text-secondary transition-colors">
+                            Lihat Detail
+                            <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Cashew Nuts -->
+<div class="group bg-surface-container-lowest rounded-lg overflow-hidden custom-shadow transition-transform hover:-translate-y-2">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Gourmet roasted cashew nuts presented in a minimalist craft paper packaging with elegant gold branding. The nuts are golden-brown and perfectly roasted. The background is a clean, bright kitchen setting with natural light, emphasizing a high-end food product aesthetic. Sophisticated and welcoming atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3csw-8Likjv6hs-oJewIeMCvVI1U-M-A3voNaoLQ73SfNryjlozVxndwaLmUbSL0zA23-X8YfGcURW8xGwu6R45XA40i9LknELGsIuFj1vjUlhME7TUjP_a3B5d41Fj8ZW3qT3knf7BAMiYj0fVIpt7S3maUsAz80Wipy8mkPNNoa3T1O0v8506YF_xlgyP51MdIgqgqRr5yv49MzXQtECwbatUpLHBUBnJJcFC7DTey48jvd6zu2MQ7twjeXGqahHFyk0HsQQCju"/>
+<div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm text-on-primary px-3 py-1 rounded-sm text-label-md">Oleh-oleh</div>
+</div>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Mete Buton Gurih</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Kacang mete kualitas ekspor dengan varian rasa otentik bumbu rempah Nusantara.</p>
+<div class="flex justify-between items-center pt-stack-md border-t border-outline-variant">
+<span class="font-label-md text-label-md text-secondary">Affordable</span>
+<button class="group/btn flex items-center gap-2 font-label-md text-primary hover:text-secondary transition-colors">
+                            Lihat Detail
+                            <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5: Brass Crafts -->
+<div class="group bg-surface-container-lowest rounded-lg overflow-hidden custom-shadow transition-transform hover:-translate-y-2">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Traditional brass ornaments and artifacts from the Sultanate of Buton, displayed in a museum-like gallery setting. The lighting is focused and dramatic, highlighting the warm yellow glow of the brass against a dark, prestigious background. The craftsmanship is intricate, showing deep heritage roots and high cultural value." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1ApSiOBT_fWFPlNE3jyVXpHhE8GoLoZaoPY1Kf1mx96EhdY1uatx4G4cKqhDwK0gjPSQwb2sXAUuNR3rWWBpCSqCZU7aRQlduu8FO9uqOZ0Id9-rn-xXl0MzJiUf4zVxDtgZuQ_QQm7pWQio-AxBY-5o6k18z8bsNVnn3iUnLTv9a5dYA51R5fELqMl9XcWzcui01Mv05DAH1cZKvEZ1UeVg2fjffcuJO1ugeOYNgsYVj790Wj46sfD9ulw92pcD_NNpMwItM5AVE"/>
+<div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm text-on-primary px-3 py-1 rounded-sm text-label-md">Kerajinan</div>
+</div>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Kuningan Sultanate</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Reproduksi artefak sejarah kesultanan yang dibuat presisi oleh pengrajin lokal berbakat.</p>
+<div class="flex justify-between items-center pt-stack-md border-t border-outline-variant">
+<span class="font-label-md text-label-md text-secondary">Premium Range</span>
+<button class="group/btn flex items-center gap-2 font-label-md text-primary hover:text-secondary transition-colors">
+                            Lihat Detail
+                            <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6: Sambal Ikan -->
+<div class="group bg-surface-container-lowest rounded-lg overflow-hidden custom-shadow transition-transform hover:-translate-y-2">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A jar of traditional red chili paste with smoked fish pieces, placed next to fresh ingredients like lime and small chilies. The lighting is vibrant and natural, highlighting the rich textures of the sambal. The scene is set in a modern, clean Indonesian kitchen with wooden accents and bright natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuGHekKAAbPaI7jR4hZO-YPbtYoZgKOE2QYw_LRd5jo4LDTwuEvDBSpRVKlmug8sy9P3_H-dn7Zluh9UT-QgOMhOC0EN_XX9y4qfygpctD6nak9XG4ltbBBT6XEv5E34dNjs3ZiTdLQUPJZmYS9bfm95dr44Dh7cXDVkiN4qnEtvCnOdpMk7RuVu4kfHAC_LYIxro7uuDaKaBKNhRqCu5KvMLbh7GARwFDtC4gjimUN2eNilTEOImrbOMmAoMf5Oys3YotUaxrMfbY"/>
+<div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm text-on-primary px-3 py-1 rounded-sm text-label-md">Kuliner</div>
+</div>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Sambal Roa Buton</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Perpaduan pedas cabai pilihan dengan gurihnya ikan asap khas perairan Sulawesi Tenggara.</p>
+<div class="flex justify-between items-center pt-stack-md border-t border-outline-variant">
+<span class="font-label-md text-label-md text-secondary">Affordable</span>
+<button class="group/btn flex items-center gap-2 font-label-md text-primary hover:text-secondary transition-colors">
+                            Lihat Detail
+                            <span class="material-symbols-outlined text-[18px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-section-gap flex justify-center">
+<button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-lg font-title-lg hover:bg-primary transition-all flex items-center gap-stack-sm">
+                Muat Lebih Banyak
+                <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary w-full py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-stack-md">Kota Baubau</h2>
+<p class="font-body-md text-body-md text-on-primary/80">Warisan Maritim Nusantara yang terus tumbuh dan bersinar.</p>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<h4 class="font-label-md text-label-md text-secondary-fixed mb-stack-sm">Navigasi</h4>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Jelajah Destinasi</a>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Kalender Event</a>
+<a class="font-body-md text-body-md text-secondary-fixed font-bold" href="#">Pusat UMKM</a>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<h4 class="font-label-md text-label-md text-secondary-fixed mb-stack-sm">Informasi</h4>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Sejarah Sultanate</a>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Kebijakan Privasi</a>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Kontak Kami</a>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<h4 class="font-label-md text-label-md text-secondary-fixed mb-stack-sm">Ikuti Kami</h4>
+<div class="flex gap-stack-md">
+<span class="material-symbols-outlined text-on-primary cursor-pointer hover:text-secondary-fixed">public</span>
+<span class="material-symbols-outlined text-on-primary cursor-pointer hover:text-secondary-fixed">camera</span>
+<span class="material-symbols-outlined text-on-primary cursor-pointer hover:text-secondary-fixed">share</span>
+</div>
+</div>
+</div>
+<div class="mt-stack-lg pt-stack-lg border-t border-on-primary/10 text-center px-margin-desktop max-w-container-max mx-auto">
+<p class="font-body-md text-body-md text-on-primary/60">© 2024 Portal Pariwisata Baubau. Warisan Maritim Nusantara.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions and scroll effects
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Simple filtering simulation
+        const filterButtons = document.querySelectorAll('.flex.flex-wrap.gap-stack-md button');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+                    b.classList.add('bg-surface-container', 'text-on-surface-variant');
+                });
+                btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+                btn.classList.add('bg-secondary-container', 'text-on-secondary-container');
+            });
+        });
+    </script>
+</body></html>

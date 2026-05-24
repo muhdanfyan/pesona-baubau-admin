@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kelola Destinasi - Pesona Baubau</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .active-nav-indicator {
+            position: absolute;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: #fedb9b; /* secondary-container / Emas Tenun */
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#30312f",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#5a4312",
+                        "on-surface-variant": "#41474e",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#261900",
+                        "surface-container-low": "#f5f3f0",
+                        "surface-variant": "#e4e2df",
+                        "on-primary-fixed": "#001e30",
+                        "on-tertiary-fixed-variant": "#4a4640",
+                        "on-primary-container": "#94c5ee",
+                        "secondary-fixed": "#ffdea4",
+                        "primary": "#003b5a",
+                        "primary-fixed": "#cbe6ff",
+                        "background": "#fbf9f6",
+                        "on-tertiary-container": "#c4beb5",
+                        "outline": "#72787f",
+                        "primary-container": "#1a5276",
+                        "secondary": "#745a27",
+                        "on-tertiary-fixed": "#1e1b16",
+                        "inverse-primary": "#9bccf6",
+                        "secondary-container": "#fedb9b",
+                        "tertiary-fixed": "#e8e1d8",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#eae8e5",
+                        "surface-dim": "#dbdad7",
+                        "surface": "#fbf9f6",
+                        "on-surface": "#1b1c1a",
+                        "tertiary-container": "#514d46",
+                        "surface-tint": "#2f6388",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fbf9f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#0e4b6e",
+                        "surface-container-highest": "#e4e2df",
+                        "outline-variant": "#c1c7cf",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#795f2b",
+                        "primary-fixed-dim": "#9bccf6",
+                        "tertiary-fixed-dim": "#ccc6bd",
+                        "inverse-on-surface": "#f2f0ed",
+                        "secondary-fixed-dim": "#e4c285",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1b1c1a",
+                        "on-error": "#ffffff",
+                        "tertiary": "#3a3630",
+                        "surface-container": "#efeeeb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "xs": "4px",
+                        "container-margin": "32px",
+                        "sm": "8px",
+                        "sidebar-width": "260px",
+                        "xl": "32px",
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "title-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface-container-low text-on-surface font-body-md overflow-x-hidden">
+<!-- Side Navigation Bar -->
+<aside class="bg-primary-container dark:bg-primary w-sidebar-width h-screen fixed left-0 top-0 border-r border-outline-variant dark:border-outline shadow-sm flex flex-col py-lg z-50">
+<div class="px-lg mb-xl">
+<h1 class="font-headline-md text-headline-md text-on-primary-container dark:text-primary-fixed font-bold tracking-tight">Digital Hub</h1>
+<p class="text-on-primary-container/70 font-label-md text-label-md">Admin Baubau</p>
+</div>
+<nav class="flex-1 custom-scrollbar overflow-y-auto px-sm space-y-xs">
+<!-- Dashboard -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container/70 dark:text-primary-fixed-dim hover:text-on-primary-container hover:bg-primary/50 transition-colors cursor-pointer active:scale-95 group relative" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<!-- Layanan Publik (Active for Manage Destinations intent) -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-secondary-container dark:text-secondary-fixed bg-primary/30 transition-colors cursor-pointer active:scale-95 group relative overflow-hidden" href="#">
+<div class="active-nav-indicator"></div>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">public</span>
+<span class="font-body-md text-body-md font-bold">Layanan Publik</span>
+</a>
+<!-- Data Kependudukan -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container/70 dark:text-primary-fixed-dim hover:text-on-primary-container hover:bg-primary/50 transition-colors cursor-pointer active:scale-95 group relative" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md text-body-md">Data Kependudukan</span>
+</a>
+<!-- Situs Budaya -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container/70 dark:text-primary-fixed-dim hover:text-on-primary-container hover:bg-primary/50 transition-colors cursor-pointer active:scale-95 group relative" href="#">
+<span class="material-symbols-outlined">museum</span>
+<span class="font-body-md text-body-md">Situs Budaya</span>
+</a>
+<!-- Laporan Warga -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container/70 dark:text-primary-fixed-dim hover:text-on-primary-container hover:bg-primary/50 transition-colors cursor-pointer active:scale-95 group relative" href="#">
+<span class="material-symbols-outlined">report_problem</span>
+<span class="font-body-md text-body-md">Laporan Warga</span>
+</a>
+<!-- Pengaturan -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-primary-container/70 dark:text-primary-fixed-dim hover:text-on-primary-container hover:bg-primary/50 transition-colors cursor-pointer active:scale-95 group relative" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Pengaturan</span>
+</a>
+</nav>
+<div class="mt-auto px-lg pt-md border-t border-white/10">
+<div class="flex items-center gap-md">
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full border-2 border-secondary-container" data-alt="A professional headshot of a middle-aged man with a friendly expression, wearing a sharp business suit. The background is a clean, softly blurred office environment with natural lighting, evoking a sense of corporate authority and approachability. The image uses high-quality lighting and a professional color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhIOect0ivtYggGQANxIS7Xfbp9ctzk17aRmyAKxbDmSBjiV5NaIpSEPpXp72hYT4kIdxzt2FxkNHNs6G2XFiWWGaoV_eC5W4FF9nZSH9wQuoz2PL3CzJLfQuUqnjA2X0GSuWKx-X8LbO_Ddqvju9DlU0GrRe-21pCbuu3bvAFPXzXFoX4itENwInsJjugr80D-GSu2CDkoeaPLCj5Th6mxXSeSERhzdsLTZgv8zYYZISZymjp47Bj6MgDm41uEuTEO7MxKLfDrlN9"/>
+<div class="overflow-hidden">
+<p class="text-on-primary-container font-title-lg text-sm truncate">Admin Baubau</p>
+<p class="text-on-primary-container/60 font-label-md text-xs truncate">admin@baubau.go.id</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Top App Bar -->
+<header class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface dark:bg-surface-container shadow-sm flex justify-between items-center px-lg z-40">
+<div class="flex items-center gap-md">
+<span class="font-title-lg text-title-lg text-primary dark:text-inverse-primary font-bold">Pesona Baubau</span>
+<div class="h-6 w-[1px] bg-outline-variant mx-sm"></div>
+<p class="font-body-md text-body-md text-on-surface-variant">Kelola Destinasi</p>
+</div>
+<div class="flex items-center gap-lg">
+<div class="relative flex items-center bg-surface-container-highest rounded-full px-md py-xs w-64 border border-transparent focus-within:border-primary transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder-on-surface-variant/60 ml-xs" placeholder="Cari destinasi..." type="text"/>
+</div>
+<div class="flex items-center gap-md text-on-surface-variant">
+<button class="hover:text-primary transition-all cursor-pointer relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="hover:text-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-sidebar-width pt-16 min-h-screen p-container-margin">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-lg gap-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Kelola Destinasi</h2>
+<p class="text-on-surface-variant mt-xs">Atur dan pantau data destinasi wisata di Kota Baubau</p>
+</div>
+<div class="flex gap-sm">
+<button class="flex items-center gap-sm bg-surface-container-highest text-primary font-title-lg px-md py-sm rounded-lg hover:bg-surface-container-high transition-all shadow-sm border border-outline-variant">
+<span class="material-symbols-outlined">ios_share</span>
+<span>Export CSV</span>
+</button>
+<button class="flex items-center gap-sm bg-primary-container text-white font-title-lg px-md py-sm rounded-lg hover:brightness-110 transition-all shadow-md active:scale-95">
+<span class="material-symbols-outlined">add</span>
+<span>Tambah Destinasi</span>
+</button>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-outline-variant mb-lg flex flex-wrap items-center gap-md">
+<div class="flex items-center gap-sm">
+<span class="text-on-surface-variant font-label-md">Kategori:</span>
+<div class="flex gap-xs">
+<button class="px-md py-xs rounded-full bg-primary text-white text-sm font-medium">Semua</button>
+<button class="px-md py-xs rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-outline-variant transition-all">Sejarah</button>
+<button class="px-md py-xs rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-outline-variant transition-all">Alam</button>
+<button class="px-md py-xs rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-outline-variant transition-all">Religi</button>
+<button class="px-md py-xs rounded-full bg-surface-container-high text-on-surface-variant text-sm font-medium hover:bg-outline-variant transition-all">Pantai</button>
+</div>
+</div>
+<div class="ml-auto flex items-center gap-sm">
+<span class="text-on-surface-variant font-label-md">Urutkan:</span>
+<select class="bg-transparent border-none text-sm font-medium text-primary focus:ring-0 cursor-pointer">
+Terbaru
+Rating Tertinggi
+Nama A-Z
+</select>
+</div>
+</div>
+<!-- Destinations Table / Bento List -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant font-label-md uppercase tracking-wider">
+<th class="px-lg py-md font-semibold">No</th>
+<th class="px-lg py-md font-semibold">Nama Destinasi</th>
+<th class="px-lg py-md font-semibold">Kategori</th>
+<th class="px-lg py-md font-semibold">Status</th>
+<th class="px-lg py-md font-semibold text-center">Rating</th>
+<th class="px-lg py-md font-semibold text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-lg py-md text-on-surface-variant">01</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="A panoramic view of the majestic Benteng Keraton Buton in Baubau, Indonesia. The ancient stone walls stretch across a lush green hill under a clear blue sky. The lighting is warm and golden, capturing the historical grandeur of the world's largest fortress in a professional, travel-photography style with a focus on historical architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_dvXFJPK7A43uA2rPcyFCHQdgKGk1wz0BiWxmpHikYn-9K_9GGfMfATL83N-Dg2EJMsSqhz7Aq8pZWnyr8JuRv7YOjuJwR9FdEV45KJZN5mvgqj87LSwjkyi2Oc7slIQs8eBkFUQ9eM9iubU12c_bE9ottzSCJcMZWFF7Xx6iRfO6is1Sqrln6PXJEpWKihJP3oZK0jbKOFl47lvNFOBsdLv5tRW0BEeTLerYSoNI5ybnvp_CB001b2df4IDaJRqki62hiR1LhfIV"/>
+<div>
+<p class="font-title-lg text-primary">Benteng Keraton Buton</p>
+<p class="text-xs text-on-surface-variant">Kec. Murhum, Kota Baubau</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="px-sm py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded text-xs font-medium">Sejarah</span>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-sm font-medium text-green-700">Aktif</span>
+</div>
+</td>
+<td class="px-lg py-md text-center">
+<div class="flex items-center justify-center gap-xs text-secondary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+</div>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-sm">
+<button class="p-2 hover:bg-primary-fixed rounded-full transition-all text-primary" title="Lihat">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+<button class="p-2 hover:bg-secondary-fixed rounded-full transition-all text-secondary" title="Edit">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-full transition-all text-error" title="Hapus">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-lg py-md text-on-surface-variant">02</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="A serene landscape of Nirwana Beach in Baubau, featuring crystalline turquoise waters and fine white sand. Palm trees sway gently in the breeze against a backdrop of a vibrant sunset casting orange and pink hues over the sea. The image evokes a peaceful, tropical paradise atmosphere with clean, high-key lighting and rich maritime colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1paCmBPDhJo_3VAEhlvsiUT-ttrqlk_hJ0RFcLmVdyukVnapTfxGkZWqAxCDvBzVCjiXthwslZtfrvB-SjeuSGSeqX-RQZLxjkk4m1qAWUuo27MaW3h6PA69EOBfiWzgL9tioi-DJXN_k6ZU4Da1kG8o8HzP83eImeUg5PzaWgsxgWz6to5uPLRgeAPtyWDWD0bz2Zb_gCPm3UpoUEqotUZathkqAum6JHokn47SDxOF0NUijlR8CKH2ov0hkSQ7HKEl_KCzNEDgy"/>
+<div>
+<p class="font-title-lg text-primary">Pantai Nirwana</p>
+<p class="text-xs text-on-surface-variant">Kec. Betoambari, Kota Baubau</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="px-sm py-1 bg-primary-fixed text-on-primary-fixed-variant rounded text-xs font-medium">Pantai</span>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-sm font-medium text-green-700">Aktif</span>
+</div>
+</td>
+<td class="px-lg py-md text-center">
+<div class="flex items-center justify-center gap-xs text-secondary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+</div>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-sm">
+<button class="p-2 hover:bg-primary-fixed rounded-full transition-all text-primary" title="Lihat">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+<button class="p-2 hover:bg-secondary-fixed rounded-full transition-all text-secondary" title="Edit">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-full transition-all text-error" title="Hapus">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-lg py-md text-on-surface-variant">03</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="The beautiful architecture of Masjid Agung Keraton Buton. The mosque features traditional maritime-influenced design with distinctive rooflines and white-washed walls. The lighting is soft and spiritual, emphasizing the tranquility of this religious landmark. The image is crisp and professional, highlighting local craftsmanship and cultural heritage in Baubau." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGaiprjud1bbOT15wtlxI9T1tqS3WACUwAiNkPtK1iV8oBCxyvCLvpCeJC_mV54LKRu08osLZq9MI3FIuPMaukeWvKdHAkuWeYVKe6eq4NbOVZmGJglmCHnUESdcKjh_cfWgqQm8sXBelsIzltfGJEnGb_MzyWAFe2QyzGj8zKEI7SWRBY_bAqyhjmUoahp2InW1oCOpyNe3eLmhIlEGKWnYPkjee9trhcgJKjVj61VFjd8PDhmBCxCZXs2D7Z93BJZFcDllA1DwdR"/>
+<div>
+<p class="font-title-lg text-primary">Masjid Agung Keraton</p>
+<p class="text-xs text-on-surface-variant">Kec. Murhum, Kota Baubau</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="px-sm py-1 bg-surface-variant text-on-surface-variant rounded text-xs font-medium">Religi</span>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="text-sm font-medium text-on-surface-variant">Nonaktif</span>
+</div>
+</td>
+<td class="px-lg py-md text-center">
+<div class="flex items-center justify-center gap-xs text-secondary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.7</span>
+</div>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-sm">
+<button class="p-2 hover:bg-primary-fixed rounded-full transition-all text-primary" title="Lihat">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+<button class="p-2 hover:bg-secondary-fixed rounded-full transition-all text-secondary" title="Edit">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-full transition-all text-error" title="Hapus">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-lg py-md text-on-surface-variant">04</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="A lush, cascading waterfall deep within the forests near Baubau, surrounded by vibrant ferns and mossy rocks. The water sparkles under dappled sunlight filtering through the canopy. The mood is fresh and adventurous, capturing the raw natural beauty of Southeast Sulawesi in a sharp, detailed environmental shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA106458iPJXTmb_mERFAyi4cBiuiy3hrHscETRrw6AmtwwEIVGnXNmyq3d3OmVJzLjtOqAp48FMIGtaLOw7eQLGk-xXr3NdBArX8W2JqXeWBPxEZ8tHpVtLKxX4eZvbUPHKNe-bppRUnuVLZG3q8sDA8QE6dnqmWt_FohXwbxWwQiLq2kMWIn3kKyJZqWqUksGHIJkUW981AqSNysJ3mHrnX96Vf-Yd4dV5RbhCzLOOSfhf_uOpSgdq8Ro88iSytjaVUVnX2fpKuRo"/>
+<div>
+<p class="font-title-lg text-primary">Air Terjun Tirta Rimba</p>
+<p class="text-xs text-on-surface-variant">Kec. Wolio, Kota Baubau</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="px-sm py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-medium">Alam</span>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-sm font-medium text-green-700">Aktif</span>
+</div>
+</td>
+<td class="px-lg py-md text-center">
+<div class="flex items-center justify-center gap-xs text-secondary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.6</span>
+</div>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-sm">
+<button class="p-2 hover:bg-primary-fixed rounded-full transition-all text-primary" title="Lihat">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+<button class="p-2 hover:bg-secondary-fixed rounded-full transition-all text-secondary" title="Edit">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-full transition-all text-error" title="Hapus">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="px-lg py-md bg-surface-container flex items-center justify-between">
+<p class="text-sm text-on-surface-variant">Menampilkan 1-4 dari 48 destinasi</p>
+<div class="flex items-center gap-xs">
+<button class="p-2 rounded-lg hover:bg-surface-container-high transition-all text-on-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-white text-sm font-bold">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface-variant text-sm font-medium">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface-variant text-sm font-medium">3</button>
+<span class="px-sm text-on-surface-variant">...</span>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container-high text-on-surface-variant text-sm font-medium">12</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-high transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Stats Cards (Extra Bento Layout element) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg mt-xl">
+<div class="bg-primary-container p-lg rounded-xl text-white shadow-md relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[80px]">landscape</span>
+</div>
+<p class="text-on-primary-container/80 font-label-md">Total Destinasi</p>
+<h3 class="text-3xl font-bold mt-sm">48</h3>
+<div class="mt-md flex items-center gap-xs text-secondary-container text-xs">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+<span>+2 Bulan ini</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 text-primary/5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[80px]">verified</span>
+</div>
+<p class="text-on-surface-variant font-label-md">Status Aktif</p>
+<h3 class="text-3xl font-bold mt-sm text-primary">42</h3>
+<p class="text-xs text-on-surface-variant mt-md">87.5% dari total publikasi</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 text-secondary/5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[80px]">star_rate</span>
+</div>
+<p class="text-on-surface-variant font-label-md">Rata-rata Rating</p>
+<h3 class="text-3xl font-bold mt-sm text-secondary">4.82</h3>
+<p class="text-xs text-on-surface-variant mt-md">Berdasarkan 1.2k ulasan warga</p>
+</div>
+</div>
+</main>
+<script>
+        // Micro-interactions and effects
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ripple-like effect on buttons
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const x = e.clientX - e.target.offsetLeft;
+                    const y = e.clientY - e.target.offsetTop;
+                    const ripple = document.createElement('span');
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    this.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+
+            // Smooth scale on hover for cards
+            const cards = document.querySelectorAll('.rounded-xl');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.classList.add('shadow-md');
+                    card.style.transform = 'translateY(-2px)';
+                    card.style.transition = 'all 0.3s ease';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.classList.remove('shadow-md');
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body></html>

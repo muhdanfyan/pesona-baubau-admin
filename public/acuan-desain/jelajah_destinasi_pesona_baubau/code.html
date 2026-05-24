@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#1b1c19",
+                    "surface-dim": "#dbdad5",
+                    "tertiary": "#592a00",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f5f3ee",
+                    "tertiary-fixed": "#ffdcc5",
+                    "primary-fixed": "#cbe6ff",
+                    "surface-tint": "#2f6388",
+                    "secondary": "#735c00",
+                    "surface-bright": "#fbf9f4",
+                    "on-tertiary-fixed": "#301400",
+                    "surface-container-high": "#eae8e3",
+                    "tertiary-container": "#7b3d00",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#1a5276",
+                    "outline": "#72787f",
+                    "primary": "#003b5a",
+                    "on-secondary-fixed": "#241a00",
+                    "on-surface-variant": "#41474e",
+                    "on-surface": "#1b1c19",
+                    "inverse-on-surface": "#f2f1ec",
+                    "on-primary-fixed": "#001e30",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e4e2dd",
+                    "background": "#fbf9f4",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#ffb783",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#30312e",
+                    "surface-variant": "#e4e2dd",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffe088",
+                    "secondary-container": "#fed65b",
+                    "on-secondary-fixed-variant": "#574500",
+                    "primary-fixed-dim": "#9bccf6",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-primary": "#9bccf6",
+                    "on-tertiary-container": "#ffad70",
+                    "on-primary-container": "#94c5ee",
+                    "surface": "#fbf9f4",
+                    "on-primary-fixed-variant": "#0e4b6e",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-tertiary-fixed-variant": "#713700",
+                    "outline-variant": "#c1c7cf",
+                    "on-secondary-container": "#745c00",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#f0eee9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "container-max": "1280px",
+                    "stack-lg": "32px",
+                    "stack-md": "16px",
+                    "gutter": "24px",
+                    "stack-sm": "8px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "title-lg": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .destination-card-shadow {
+            shadow: 0px 12px 32px rgba(26, 82, 118, 0.08);
+        }
+        .btn-hover-emas:hover {
+            border-bottom: 2px solid #ffe088;
+        }
+        .text-shadow-hero {
+            text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-md shadow-sm">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+<div class="flex items-center">
+<span class="font-display-lg text-title-lg text-primary dark:text-primary-fixed">Pesona Baubau</span>
+</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed font-bold border-b-2 border-secondary transition-colors duration-300" href="#">Jelajah</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#">Event</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#">UMKM</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300" href="#">Tentang</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container-low border border-outline-variant px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-outline mr-2 text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-md w-40" placeholder="Cari destinasi..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-8 py-2.5 rounded-full font-label-md text-label-md hover:scale-95 transition-transform btn-hover-emas">
+                    Masuk
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<header class="relative h-[614px] min-h-[450px] overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/80 z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A wide cinematic landscape of a coastal fortress in Indonesia during the golden hour. The ancient stone walls of the Buton Sultanate fortress are bathed in warm orange light, overlooking a vast turquoise sea. The atmosphere is prestigious and historic, with a clear sky reflecting soft pastel tones. High-end travel photography style with deep blue shadows and golden highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyEXP-e8xvz5jDsfbwClQkZWbXULjFrs7hipNb-CHpMPLaZPTPgXlRUnAHsKFzTTC2aCinvq6b9IrqURIorWc2_cbERLoZhy-oQc2RVqoCLOzLQsGjrBxI_V345wml5gAM2ND4J4Q5fwRGfgzMTyL4-GWvNIUParEJvIQkt5hB02awz_hJk4YMOC2P5hjie7Te8jepuuMxS_ALr9doGhTsm2MQdmTg4a4Em5jPXf_DyVhbvUhkhmPY8f3ZOCjs8dROoO7R9eaBxBIg"/>
+<div class="relative z-20 text-center px-gutter max-w-3xl">
+<h1 class="font-display-lg text-display-lg text-surface-container-lowest text-shadow-hero mb-6">Jelajah Destinasi</h1>
+<p class="font-body-lg text-body-lg text-surface-container-lowest/90 text-shadow-hero">
+                    Temukan keajaiban sejarah Maritim dan pesona alam yang tersembunyi di jantung Kesultanan Buton.
+                </p>
+</div>
+</header>
+<!-- Search & Filter Section -->
+<section class="max-w-container-max mx-auto px-gutter -mt-10 relative z-30 mb-stack-lg">
+<div class="bg-surface-container-lowest p-stack-md rounded-xl shadow-xl flex flex-col md:flex-row gap-4 items-center justify-between border border-surface-variant">
+<div class="flex flex-wrap gap-2 justify-center md:justify-start" id="filter-group">
+<button class="px-6 py-2 rounded-full font-label-md text-label-md bg-primary text-on-primary transition-all duration-300" onclick="filterDestinations('semua')">Semua</button>
+<button class="px-6 py-2 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-all" onclick="filterDestinations('sejarah')">Sejarah</button>
+<button class="px-6 py-2 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-all" onclick="filterDestinations('alam')">Alam</button>
+<button class="px-6 py-2 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-all" onclick="filterDestinations('budaya')">Budaya</button>
+<button class="px-6 py-2 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container transition-all" onclick="filterDestinations('kuliner')">Kuliner</button>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined">sort</span>
+<span class="font-label-md">Urutkan: Terpopuler</span>
+</div>
+</div>
+</section>
+<!-- Content Grid -->
+<section class="max-w-container-max mx-auto px-gutter py-stack-lg mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-lg" id="destination-grid">
+<!-- Destination Card 1 -->
+<div class="group destination-card bg-surface-container-lowest rounded-lg overflow-hidden border border-surface-variant transition-all duration-500 hover:shadow-2xl flex flex-col" data-category="alam">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A serene tropical beach with crystal clear turquoise water and white powdery sand under a bright midday sun. Lush palm trees sway gently on the shoreline. The image captures the pristine beauty of Pantai Nirwana in Baubau, with soft shadows and a vibrant, immersive coastal palette of turquoise, deep blue, and sandy beige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjaQiEm2X8ClCBmc9pyq-_lfz8s4M-sxqNfiYHG1h47QBy4Bs1MVozZM3PSrjlXFxmxzuXJ99HYN7m_Bg6m0MuT8mVYVxecJyWW5JmF5hmIm-faC4ikgNIe03jWkuLxkn42ct03fF7GDDFeZ69MMPmKhIQ3yw3E6CQLV9VK-E7csI31qrGQl7s0X3dsM0fBVhDnW8Cqy2-Wboxh5M8bX-urg1n4cYbwCp40j4nfoV3ZYbLX10ogo20Oxd_FsPN0xQUP7STgYY0r2l8"/>
+<div class="absolute top-4 left-4 bg-primary/90 text-on-primary px-3 py-1 rounded-sm text-label-md font-label-md">Alam</div>
+</div>
+<div class="p-stack-md flex-grow">
+<h3 class="font-headline-md text-title-lg text-primary mb-2">Pantai Nirwana</h3>
+<p class="font-body-md text-on-surface-variant mb-6 line-clamp-2">Pesona hamparan pasir putih yang kontras dengan gradasi air laut biru toska yang jernih dan tenang.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="flex items-center text-secondary gap-1">
+<span class="material-symbols-outlined text-[18px]" data-weight="fill">star</span>
+<span class="font-label-md">4.9</span>
+</span>
+<button class="text-primary font-label-md flex items-center gap-2 group-hover:gap-3 transition-all">
+                                Lihat Detail <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Destination Card 2 -->
+<div class="group destination-card bg-surface-container-lowest rounded-lg overflow-hidden border border-surface-variant transition-all duration-500 hover:shadow-2xl flex flex-col" data-category="sejarah">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A massive, weathered stone fortification wall made of coral rock, winding through a green landscape. The architecture is ancient and authoritative, representing the Buton Fortress. Sunbeams pierce through clouds, illuminating the historical textures. The mood is solemn and majestic, reflecting the rich maritime heritage of the Sultanate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Ec9dYrjxjaaMlr-tLZAmNyku6GsMI0-ZCeU8Dnz9bK6SraNlvIproqQKI3ON5CFgsGkzzbrlZvx9cUUxPQIUtU3Dr8O6M1gz2L2NBCV8GBMQyWO-VVLbcu7tGp_6v_v0m7xdYYtLoHXLco9vihDFWgbR6XCH6SDiE5zHfeBgaAWVDbNDboh-VWCtiFcMQbkNpL6lYUyHy5GSvzU_YqeOwsDe0t4LWquKXALPIYmn95BeA_n_-C85kW_MjE5myqrxHLLwSDNwVRda"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-sm text-label-md font-label-md">Sejarah</div>
+</div>
+<div class="p-stack-md flex-grow">
+<h3 class="font-headline-md text-title-lg text-primary mb-2">Benteng Keraton Buton</h3>
+<p class="font-body-md text-on-surface-variant mb-6 line-clamp-2">Benteng terluas di dunia dengan sistem pertahanan unik yang menjadi saksi bisu kejayaan Kesultanan Buton.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="flex items-center text-secondary gap-1">
+<span class="material-symbols-outlined text-[18px]" data-weight="fill">star</span>
+<span class="font-label-md">5.0</span>
+</span>
+<button class="text-primary font-label-md flex items-center gap-2 group-hover:gap-3 transition-all">
+                                Lihat Detail <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Destination Card 3 -->
+<div class="group destination-card bg-surface-container-lowest rounded-lg overflow-hidden border border-surface-variant transition-all duration-500 hover:shadow-2xl flex flex-col" data-category="alam">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A dense pine forest with misty sunlight filtering through the tall, straight trunks. The ground is covered in soft green needles and ferns. The scene is Hutan Pinus Samparona in Baubau, evoking a cool, fresh mountain atmosphere. Soft-focus lighting creates a dreamlike, ethereal aesthetic with a palette of deep forest greens and golden mist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfaHaC4QqOlhaXCoSKB-eF8WmBymzpf10gVQiwPipAgi3dsYxVBV3blPuDenEe8qLALJjZptXi2yJyxIbm4Cv7BHdmkGAYIlpK5VXBeW1UxLi_NsOupzFrEZlJ4OFGA7ig9ucV-rZwFgWWNteK0FBhJzLMga_9exOXIaNhpnDn4hmRS5ry1zrPBCo1A_zjqVMo8GcZjR4XT776DrDHTRuG7bt1n0rn0Edgqc8Et7BdLm3p2hDbmdkEz84fsyunz5bb0PyK1R3GiD2d"/>
+<div class="absolute top-4 left-4 bg-primary/90 text-on-primary px-3 py-1 rounded-sm text-label-md font-label-md">Alam</div>
+</div>
+<div class="p-stack-md flex-grow">
+<h3 class="font-headline-md text-title-lg text-primary mb-2">Hutan Samparona</h3>
+<p class="font-body-md text-on-surface-variant mb-6 line-clamp-2">Kawasan hutan pinus yang asri dan sejuk, lokasi sempurna untuk berkemah dan melepas penat dari hiruk pikuk kota.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="flex items-center text-secondary gap-1">
+<span class="material-symbols-outlined text-[18px]" data-weight="fill">star</span>
+<span class="font-label-md">4.7</span>
+</span>
+<button class="text-primary font-label-md flex items-center gap-2 group-hover:gap-3 transition-all">
+                                Lihat Detail <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Destination Card 4 -->
+<div class="group destination-card bg-surface-container-lowest rounded-lg overflow-hidden border border-surface-variant transition-all duration-500 hover:shadow-2xl flex flex-col" data-category="budaya">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Intricate details of a traditional Indonesian wooden house with hand-carved motifs. The sunlight highlights the deep brown textures of the aged wood. The architecture is representative of the Buton traditional style. The atmosphere is warm, cultural, and respectful of heritage, with a sophisticated palette of earth tones and golden highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvt9JzX_oUPbYb8gO5jAAJNpTfWNzzXMkPzUR2Kp5aaGHwr5jwGhN5wJipqNv-Shsvt-jJldqBNWnYhTicWK_ic7t5pjnNm1JGLxU_aYpVJiRVVmOmI80zb_X6OwkeLGFwDhixsMJ9HNb4mzuT3ax06bi7NHFIQV26B_sy5G_unwptLoBzfsdGjSkYNVHkD1YY6gbMP05ZAvopbshztQ1UxV9pIRBH1AW32Loc6KDr1nUYGLqkwmORz40k5aiLR5oRHt_ZRVDl1gSm"/>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-sm text-label-md font-label-md">Budaya</div>
+</div>
+<div class="p-stack-md flex-grow">
+<h3 class="font-headline-md text-title-lg text-primary mb-2">Kampung Tenun Sulaa</h3>
+<p class="font-body-md text-on-surface-variant mb-6 line-clamp-2">Pusat kerajinan tenun tradisional Buton di mana Anda bisa melihat langsung proses pembuatan kain motif Emas Tenun.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="flex items-center text-secondary gap-1">
+<span class="material-symbols-outlined text-[18px]" data-weight="fill">star</span>
+<span class="font-label-md">4.8</span>
+</span>
+<button class="text-primary font-label-md flex items-center gap-2 group-hover:gap-3 transition-all">
+                                Lihat Detail <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Destination Card 5 -->
+<div class="group destination-card bg-surface-container-lowest rounded-lg overflow-hidden border border-surface-variant transition-all duration-500 hover:shadow-2xl flex flex-col" data-category="kuliner">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An artistic presentation of traditional Indonesian seafood dishes served on rustic earthenware plates. Grilled fish, colorful sambals, and steaming jasmine rice are arranged on a dark wooden table. Soft, directional window light creates dramatic shadows and highlights the textures of the food. The mood is appetizing and authentic, celebrating local Butonese culinary heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBENzPU0aP0TVhYF6m0YQ9wPfP2TcB4Dqf7GxoagooVYW2WVOurV8eZ5bvKhV8cCdBEGNfR4r4BiHG_Z3vg9hq5M5gKZP9_a8bUfZcTPQwyL5ZWq49IPau151sXAeWTSPVKpmS4nmxPy1m0uUe9xMa-B1x4DqwTeu7st26FKWaUwDlBMn9Dc3Ny9YLiK1EbNuDmQMUYE5wJNGm66FO9Nzw7UorTe5VTiu1uo_KEvJ6EYjq6uedyxEhj7rPNoLfZ4--Rn4hrqB4Q1sck"/>
+<div class="absolute top-4 left-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-sm text-label-md font-label-md">Kuliner</div>
+</div>
+<div class="p-stack-md flex-grow">
+<h3 class="font-headline-md text-title-lg text-primary mb-2">Pasar Wameo</h3>
+<p class="font-body-md text-on-surface-variant mb-6 line-clamp-2">Jantung kuliner dan perdagangan Baubau, nikmati kesegaran hasil laut dan jajanan tradisional khas Buton.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="flex items-center text-secondary gap-1">
+<span class="material-symbols-outlined text-[18px]" data-weight="fill">star</span>
+<span class="font-label-md">4.6</span>
+</span>
+<button class="text-primary font-label-md flex items-center gap-2 group-hover:gap-3 transition-all">
+                                Lihat Detail <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Destination Card 6 -->
+<div class="group destination-card bg-surface-container-lowest rounded-lg overflow-hidden border border-surface-variant transition-all duration-500 hover:shadow-2xl flex flex-col" data-category="alam">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A majestic waterfall cascading down a sheer rock face into a crystal clear pool below, surrounded by dense tropical jungle foliage. Sunbeams sparkle in the mist. The setting is hidden and tranquil, capturing Air Terjun Tirta Rimba in Baubau. The color palette is rich in deep emerald greens, pristine whites, and cool aquatic blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMmM6E5VvEnHFwgG0bc_IQh6heoce3-rLOegfm8yVNfJQv-IlD9F9zLDnfZQdm2sZmRoQaEZJtYT9brogAZX3yZS7HA6-p08tncffE9fC3ozyv4jpfqozAKfMqqyHC5gOWYuczXvv5HRxaTrlIgnd7Hqx_l5lIMrJapbOv9dYNmWlZElRuytKoIzTunbhRoiMPo-M4cM2on3pZ9tT3G5FJEKMdttYv3NgvXn7UI7UVloi_QeNjiDAnQFbcEN5--kJoixLLzH4htqzk"/>
+<div class="absolute top-4 left-4 bg-primary/90 text-on-primary px-3 py-1 rounded-sm text-label-md font-label-md">Alam</div>
+</div>
+<div class="p-stack-md flex-grow">
+<h3 class="font-headline-md text-title-lg text-primary mb-2">Air Terjun Tirta Rimba</h3>
+<p class="font-body-md text-on-surface-variant mb-6 line-clamp-2">Oase kesegaran di pinggiran kota dengan aliran air jernih yang jatuh di tengah rimbunnya pepohonan tropis.</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="flex items-center text-secondary gap-1">
+<span class="material-symbols-outlined text-[18px]" data-weight="fill">star</span>
+<span class="font-label-md">4.5</span>
+</span>
+<button class="text-primary font-label-md flex items-center gap-2 group-hover:gap-3 transition-all">
+                                Lihat Detail <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="flex justify-center mt-section-gap">
+<button class="border border-primary text-primary px-10 py-3 rounded-full font-label-md hover:bg-primary-container hover:text-on-primary-container transition-all flex items-center gap-3">
+                    Muat Lebih Banyak <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-on-background dark:bg-inverse-surface w-full py-section-gap">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
+<div>
+<span class="font-display-lg text-headline-md text-secondary-fixed mb-6 block">Pesona Baubau</span>
+<p class="font-body-md text-surface-variant/80 max-w-sm">
+                    Gerbang resmi informasi pariwisata dan budaya Kota Baubau. Temukan keajaiban maritime di timur Indonesia.
+                </p>
+<div class="flex gap-4 mt-8">
+<a class="w-10 h-10 rounded-full border border-surface-variant/30 flex items-center justify-center text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-surface-variant/30 flex items-center justify-center text-surface-variant/80 hover:text-secondary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-stack-md">
+<div class="flex flex-col gap-4">
+<h4 class="text-surface-bright font-label-md uppercase tracking-wider mb-2">Navigasi</h4>
+<a class="text-surface-variant/80 hover:text-secondary-container transition-all font-body-md" href="#">Destinasi</a>
+<a class="text-surface-variant/80 hover:text-secondary-container transition-all font-body-md" href="#">Budaya</a>
+<a class="text-surface-variant/80 hover:text-secondary-container transition-all font-body-md" href="#">Kuliner</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-surface-bright font-label-md uppercase tracking-wider mb-2">Bantuan</h4>
+<a class="text-surface-variant/80 hover:text-secondary-container transition-all font-body-md" href="#">Kontak</a>
+<a class="text-surface-variant/80 hover:text-secondary-container transition-all font-body-md" href="#">Kebijakan Privasi</a>
+</div>
+</div>
+<div>
+<h4 class="text-surface-bright font-label-md uppercase tracking-wider mb-6">Berlangganan Newsletter</h4>
+<p class="text-surface-variant/80 mb-6 font-body-md">Dapatkan update terbaru tentang event dan destinasi menarik di Baubau.</p>
+<div class="flex gap-2">
+<input class="bg-surface-container-highest/10 border border-surface-variant/30 px-4 py-3 rounded-lg flex-grow text-surface-bright focus:outline-none focus:border-secondary-fixed" placeholder="Alamat email anda" type="email"/>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-lg font-label-md hover:scale-95 transition-transform">
+                        Kirim
+                    </button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-section-gap pt-stack-lg border-t border-surface-variant/10 text-center">
+<p class="font-body-md text-surface-variant/60">© 2024 Pesona Baubau. Maritime Heritage Reimagined.</p>
+</div>
+</footer>
+<script>
+        function filterDestinations(category) {
+            const cards = document.querySelectorAll('.destination-card');
+            const buttons = document.querySelectorAll('#filter-group button');
+            
+            // Update button styles
+            buttons.forEach(btn => {
+                if (btn.innerText.toLowerCase() === category || (category === 'semua' && btn.innerText.toLowerCase() === 'semua')) {
+                    btn.classList.add('bg-primary', 'text-on-primary');
+                    btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+                } else {
+                    btn.classList.remove('bg-primary', 'text-on-primary');
+                    btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+                }
+            });
+
+            // Filter cards
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'semua' || cardCategory === category) {
+                    card.style.display = 'flex';
+                    card.classList.add('animate-fade-in');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Simple animation trigger on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.destination-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(card);
+        });
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+</body></html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Benteng Keraton Buton - Pesona Baubau</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#fbf9f4",
+                      "background": "#fbf9f4",
+                      "on-secondary-container": "#745c00",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#ffdcc5",
+                      "tertiary": "#592a00",
+                      "on-surface-variant": "#41474e",
+                      "on-secondary-fixed-variant": "#574500",
+                      "secondary": "#735c00",
+                      "surface-variant": "#e4e2dd",
+                      "primary-fixed-dim": "#9bccf6",
+                      "on-primary-fixed-variant": "#0e4b6e",
+                      "surface-container-highest": "#e4e2dd",
+                      "surface-tint": "#2f6388",
+                      "surface-container": "#f0eee9",
+                      "on-background": "#1b1c19",
+                      "outline-variant": "#c1c7cf",
+                      "on-tertiary-container": "#ffad70",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#f5f3ee",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#dbdad5",
+                      "secondary-container": "#fed65b",
+                      "on-tertiary-fixed": "#301400",
+                      "on-error": "#ffffff",
+                      "on-primary-container": "#94c5ee",
+                      "outline": "#72787f",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#fbf9f4",
+                      "on-primary-fixed": "#001e30",
+                      "primary-container": "#1a5276",
+                      "on-secondary": "#ffffff",
+                      "surface-container-high": "#eae8e3",
+                      "secondary-fixed": "#ffe088",
+                      "inverse-on-surface": "#f2f1ec",
+                      "tertiary-fixed-dim": "#ffb783",
+                      "inverse-surface": "#30312e",
+                      "on-tertiary": "#ffffff",
+                      "primary": "#003b5a",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#241a00",
+                      "on-surface": "#1b1c19",
+                      "secondary-fixed-dim": "#e9c349",
+                      "primary-fixed": "#cbe6ff",
+                      "tertiary-container": "#7b3d00",
+                      "on-tertiary-fixed-variant": "#713700",
+                      "inverse-primary": "#9bccf6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-gap": "120px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "stack-lg": "32px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "title-lg": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Playfair Display"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "headline-md": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "body-md": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 59, 90, 0.8) 100%);
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 24px;
+        }
+        .masonry-item-tall { grid-row: span 2; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary">Kota Baubau</div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-label-md text-label-md text-primary font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-secondary after:rounded-full hover:text-primary transition-colors duration-300" href="#">Jelajah</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Event</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">UMKM</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Tentang</a>
+</div>
+<div class="flex items-center gap-stack-md">
+<div class="relative group hidden lg:block">
+<input class="bg-surface-bright border border-primary/20 rounded-lg px-4 py-2 text-body-md focus:outline-none focus:border-primary w-64 transition-all" placeholder="Cari destinasi..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-primary opacity-50">search</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:bg-primary-container transition-colors active:scale-95">Masuk</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen w-full overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A cinematic wide shot of the majestic Benteng Keraton Buton at sunset. The ancient white limestone walls snake across a lush green hilltop overlooking the deep blue Flores Sea. Warm golden hour light catches the textures of the stone and the traditional wooden structures inside. The atmosphere is prestigious, peaceful, and rich with maritime history, following a high-end travel editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhgemyKQrRfotDQiBZTE7EJkYS0A_yoToQw81aTfCka6_RRJvMw4qcOq_rrYK-xe7KshMXvmWf4FkFt0fINZerEyMYkjWMNyaWF-vjCxmwVrOjt89l0njDqVqzNVNcR-x6aKhF8lzi635HfsJ0rbZ5nEwDKNx5pnOkq3iBvVItWQCCUyi55DEd5laL7Ari_WN3HlTJFaa6todzRBrM-hnEDoqXJhap3KYBtmXYkEihjPyFjrSv4htFlC8wnMyzg--P3BMZZJq_QOUV"/>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-end pb-32 px-margin-desktop text-center">
+<div class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-sm font-label-md mb-stack-md animate-fade-in">
+                BENTENG TERLUAS DI DUNIA
+            </div>
+<h1 class="font-display-lg text-display-lg text-on-primary mb-stack-sm max-w-4xl">Benteng Keraton Buton</h1>
+<p class="font-body-lg text-body-lg text-on-primary/90 max-w-2xl">Saksi bisu kejayaan Kesultanan Buton di jantung Kepulauan Buton.</p>
+</div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-on-primary text-4xl">keyboard_double_arrow_down</span>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop">
+<!-- Overview Section -->
+<section class="py-section-gap grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-8">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-lg">Warisan Maritim yang Tak Terkalahkan</h2>
+<div class="space-y-stack-md font-body-lg text-on-surface-variant leading-relaxed">
+<p>Terletak di puncak bukit tinggi Kota Baubau, Benteng Keraton Buton bukan sekadar struktur pertahanan. Ini adalah mahakarya arsitektur yang diakui oleh Guinness World Records sebagai benteng terluas di dunia, mencakup area seluas lebih dari 23 hektar.</p>
+<p>Dibangun pada abad ke-16 menggunakan batu gunung yang direkatkan dengan campuran putih telur dan kapur, benteng ini telah melindungi Kesultanan Buton selama berabad-abad dari serangan penjajah dan perompak. Setiap sudut temboknya menyimpan cerita tentang strategi maritim yang cerdik dan kedaulatan yang tak tergoyahkan.</p>
+<p>Pengunjung dapat menyusuri tembok setinggi 2,7 meter ini sambil menikmati panorama 360 derajat yang memukau: mulai dari pemukiman warga Baubau yang padat hingga birunya Selat Buton yang tenang.</p>
+</div>
+</div>
+<div class="lg:col-span-4 sticky top-32">
+<div class="bg-white p-stack-lg rounded-lg shadow-[0px_12px_32px_rgba(26,82,118,0.08)] border border-surface-variant/50">
+<h3 class="font-title-lg text-title-lg text-primary mb-stack-md">Informasi Pengunjung</h3>
+<ul class="space-y-stack-md">
+<li class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">payments</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Tiket Masuk</p>
+<p class="font-body-md text-body-md font-bold">Rp 10.000 / Orang</p>
+</div>
+</li>
+<li class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Jam Operasional</p>
+<p class="font-body-md text-body-md font-bold">07:00 - 18:00 WITA</p>
+</div>
+</li>
+<li class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Lokasi</p>
+<p class="font-body-md text-body-md font-bold">Kec. Murhum, Baubau</p>
+</div>
+</li>
+</ul>
+<button class="w-full mt-stack-lg bg-primary text-on-primary py-4 rounded-lg font-title-lg hover:bg-primary-container transition-all hover:translate-y-[-2px]">Ambil Tur Virtual</button>
+</div>
+</div>
+</section>
+<!-- Facilities Section -->
+<section class="py-section-gap border-y border-surface-variant/30">
+<h2 class="font-headline-md text-headline-md text-primary text-center mb-section-gap">Fasilitas &amp; Layanan</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-stack-lg">
+<div class="flex flex-col items-center text-center p-stack-lg rounded-xl hover:bg-surface-container transition-colors group">
+<div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-stack-md group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">local_parking</span>
+</div>
+<span class="font-title-lg text-title-lg">Area Parkir</span>
+<p class="font-body-md text-on-surface-variant mt-2">Luas dan aman untuk motor &amp; mobil</p>
+</div>
+<div class="flex flex-col items-center text-center p-stack-lg rounded-xl hover:bg-surface-container transition-colors group">
+<div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-stack-md group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">wc</span>
+</div>
+<span class="font-title-lg text-title-lg">Toilet Umum</span>
+<p class="font-body-md text-on-surface-variant mt-2">Bersih dan tersebar di beberapa titik</p>
+</div>
+<div class="flex flex-col items-center text-center p-stack-lg rounded-xl hover:bg-surface-container transition-colors group">
+<div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-stack-md group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">record_voice_over</span>
+</div>
+<span class="font-title-lg text-title-lg">Pemandu</span>
+<p class="font-body-md text-on-surface-variant mt-2">Pemandu lokal berlisensi sejarah</p>
+</div>
+<div class="flex flex-col items-center text-center p-stack-lg rounded-xl hover:bg-surface-container transition-colors group">
+<div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-stack-md group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">mosque</span>
+</div>
+<span class="font-title-lg text-title-lg">Masjid Agung</span>
+<p class="font-body-md text-on-surface-variant mt-2">Pusat ibadah bersejarah di dalam benteng</p>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-section-gap">
+<div class="flex justify-between items-end mb-stack-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Sudut Estetik</h2>
+<p class="font-body-lg text-on-surface-variant">Keindahan yang abadi dalam setiap lensa.</p>
+</div>
+<button class="font-label-md text-primary flex items-center gap-2 group">
+                    Lihat Semua <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="masonry-grid">
+<div class="masonry-item-tall rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A vertical close-up of the ancient limestone wall of Buton Fortress, showing the intricate textures of the hand-placed stones. Sunlight creates deep shadows in the crevices. The style is minimalist and tactile, highlighting the heritage materials against a clear blue sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSx9i2YZdTjF8j_N-UltKfFRiyzQ-49LRRsDHk_f8650WMT_xHxI_2Z1qxZQ1MQBt02_1E8Xi1lQn8q01ohsdw0zrPjumAs7j-s_UTI2FyTOpBjo916B8VHZuWvk_v36QL-VDhtbKnYp7DegkSMwiLSzLxGGZXdhoabkr0t2yyh-06Oyfr4GptpTTIm-q17Zc4Q51rPcBe27fvi2flZ3qvIlzErd25sqxhq1iTx-xUWIMDbDrM9vcoGptK5ihs7BEXf1EpgMFq-UlT"/>
+</div>
+<div class="rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A landscape view looking through one of the ancient arched stone gateways of the Buton Fortress. Through the arch, the turquoise waters of the sea and small traditional boats are visible in the distance. The mood is framed, inviting, and nostalgic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSwqPm7hgmDpe4ZzIUeyYAGstNLtB8KOoFPzOrkyi17XuGo3bEuqlmBguk-JpLPSBnhOfk75dED7xvw-n87KcMvxcT0W-14pCX4g05LlBEKCrfIv05LZSBMGgUUGqiuazf7ejNC3iIcuVi8PHS5o-oqYRBHN6_IbL_tmEscVwgDP_juub7gXWYLJ7NQFSHLmBcaNvmpT51D_4PCmOoA_YCz0_0nNXUDpQISGXLAho_QysscBLBQxyIRVxB2C2XeplK2vWa6kb5OQGU"/>
+</div>
+<div class="rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A panoramic view from the top of the fortress wall, showing a traditional wooden house with a tiered roof nestled within the fortress grounds. Lush tropical greenery surrounds the structure. High-end, bright photography with a focus on cultural architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0f8hZYdSl3k93vldc248qgH1eulQsrRG-ZTN7Opcp3rCfkTvLCJfHWaO5OPsjJ-3D_kS0oDAVFTu98wQRIqKQtOH9v9r43KvV-cQLtlusuTsOXTkv0TTe4jd0LiNRtBJD4wIOuKpYmJ_T8Cx_VVZ67s5R2b0o4pffN00NABiyMJkReWPG0KG39WGGTxaGaKujiG06dlkllRBO79zoo7DkBglYb2Q3zAENULPoqsjv1PYw6B9yM04sdChyCUpN6ttPXIuUrI7q9UoN"/>
+</div>
+<div class="masonry-item-tall rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A dramatic shot of the fortress Bastion during twilight. The sky is a deep indigo blue, and the ancient stone structure is subtly lit by warm amber ground lights, creating a prestigious and mysterious atmosphere suitable for a travel magazine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqWZId8hvaQlPRqsIsAd-GTUozGQenB1yVDEtTpw2cGM4JYDWfi0OxLTfiwymkF9m6fCHCbWoFT9rLICRA_TWLMlnCQ2bA2lOa1cafa3d-Q-ozXyCKYvAAf-27p-agVSx5-ejOmj3FiGKXPLJei6Xg0aKZfRPXi8ppFtZ--gIGabOI2MPBxxZEZ-PHm38nhNkm7j6fcHYk2_tYWNy9Lu68v029Bi_jOOGpnki_V3u8LEjDUdJTaPpayYfr5V4rbvNrU69ifayJvL6D"/>
+</div>
+<div class="rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An aerial drone shot looking straight down at a section of the winding fortress walls, which resemble a giant dragon's back. The contrast between the grey stone and the vivid green grass is striking and artistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMMjEyxHRh_uk1aGAy0YKjnMeCkASxPQkJEB9-ihtaIHqbyDf_ImmMpWXjPTFRcAAZa4pKK67wD_upteSL06ypwGhTPBXkxMcmaBs4EN5a_Lxhy1uZ2xetbe4dy2kEXwYI6jGT5P26MIraA8eJZlhoSDuYhmVBakt7SlwmvS-qxK_TskccH9dPnB9enyIbi-NQVwV7w6W6RlZ-2yzyVRNof78Vl00GfhmQ2-MHIfIdxgHX6GlvRP7_7EszVRcqux-cUgUM8KeZWcZ0"/>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="py-section-gap">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-lg">Cara Menuju Ke Sini</h2>
+<div class="h-[500px] w-full rounded-xl overflow-hidden shadow-sm relative grayscale hover:grayscale-0 transition-all duration-700">
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+<img class="w-full h-full object-cover" data-location="Baubau, Indonesia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3N42s0RhlvXaRn8LK20cuiGn7JTHI6T0VnqxR42Fj9g8hnyXrPePDUqptX3Kt1U0uIziBNIjlJ415kadYO-WEzzMSZb_QRdMXCDNoNnmdHJD9HAm_pVvoiMMFkiq23erO4VAW3NOVKar5-dGMXdP162yvMCgiwrQxipR__MyY6OMJg4D6F22uSt9exDYl35Hj-uRa0_i9QftrH5V5gi7NEmM0GnoNHDmkBxLkLZoSCAQ7nJTjnzxJCAR7VORuMXzN5_HO5NYwin2w"/>
+<div class="absolute bottom-8 left-8 bg-white p-6 rounded-lg shadow-xl max-w-sm">
+<p class="font-title-lg text-primary">Lokasi Strategis</p>
+<p class="font-body-md text-on-surface-variant mt-2">Hanya 15 menit berkendara dari Bandara Betoambari atau 10 menit dari Pelabuhan Murhum.</p>
+<a class="inline-flex items-center gap-2 mt-4 text-primary font-label-md group" href="#">
+                        Buka di Google Maps <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Nearby Attractions -->
+<section class="py-section-gap">
+<h2 class="font-headline-md text-headline-md text-primary mb-section-gap">Eksplorasi Terdekat</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
+<!-- Attraction 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] rounded-lg overflow-hidden mb-stack-md shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A beautiful view of Pantai Nirwana in Baubau, featuring crystal clear turquoise water and pristine white sand. Gentle waves lap the shore under a bright midday sun. The style is fresh, immersive, and captures a sense of tropical paradise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3TPdiA77QR1wYiVgo9U-kE4nNaifLcgpieEMeYMjnTOreZui9cmg931eW1PoK-MsJOnclD2ogShnpbRlUhoGYOFAHyLU2ipB71R49ijR0fXlevVjDvbyEMoI2sphsL62TuB6WxRQEutffqcO-A8yLjZ5YZBdIIcIIkJcrbCspstAAheAXiNCHXGG8WwKrqesulipkZFQadIXXxxgUq7733WCuex_5yqqyL3xK851Fi4x9ISbHB0nnyp4SP0UGQTd-4fH9ZFlTsiRz"/>
+</div>
+<span class="text-secondary font-label-md">ALAM • 15 MENIT</span>
+<h3 class="font-headline-md text-2xl group-hover:text-primary transition-colors">Pantai Nirwana</h3>
+</div>
+<!-- Attraction 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] rounded-lg overflow-hidden mb-stack-md shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="The cascading waters of Air Terjun Samparona, surrounded by dense, vibrant green jungle foliage. The waterfall is misty and ethereal, captured with a long exposure for a silky water effect. Serene and adventurous mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWW_f64Sefj18e8dYPNrCOs13Lk5QUbNnYGyS1HLFpv_YmC2zkhz1CPYqPAMm7UZR0ats2m7GItjRcEzmenBBGZf650njDFuuNwpdKZ8Mw8g0DqRWALmUykCQ5RNSncOFKGiYYJsHl2fKnwvh3PFK7091XyPUSud36C8hdRppDQwwqMs3ymCsinkCfEsv7MmYt-xLj-9AZ8HxhjKAmj0sdBFdILFK8vYy2EEnhxgdoy9Jzd84ni-RQPx1DzmGIbYOoUwFDlL6CVgv6"/>
+</div>
+<span class="text-secondary font-label-md">PETUALANGAN • 30 MENIT</span>
+<h3 class="font-headline-md text-2xl group-hover:text-primary transition-colors">Air Terjun Samparona</h3>
+</div>
+<!-- Attraction 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] rounded-lg overflow-hidden mb-stack-md shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A lively view of the Baubau Waterfront at night. Modern streetlights reflect on the water, and people gather at local food stalls. The atmosphere is vibrant and welcoming, showing the contemporary side of maritime life in the city." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE2rbY3wzcVjQWeOVzP_Nc3iDmtpdp_nyowh7IGpzBR4ia7Zf9kNbWHSW9WEaylroon4ipHaOGrIrLs4dW7o_KEek51TWUCwHFv7QEa5EU5DV1j8K9gomYzB5Icnvf89x6KwyBfS-rLusVKk2LIR9UDRg3iwxCUTVYz3XLFP2JhfOg6xSTqyi7IGgNsUevdxAPHj4OuMIZ7y6vV3aL7jyaloWu0OrszuLdW1KHyoEFmj6RhMvNp5JHqNPA4VuNwUrpv5Ox64J4gy98"/>
+</div>
+<span class="text-secondary font-label-md">KULINER • 5 MENIT</span>
+<h3 class="font-headline-md text-2xl group-hover:text-primary transition-colors">Waterfront City</h3>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-2">
+<div class="font-headline-lg text-headline-lg mb-stack-md">Kota Baubau</div>
+<p class="font-body-md text-on-primary/80 max-w-md">Portal resmi pariwisata Baubau. Mengajak dunia untuk menemukan keajaiban maritim dan warisan sejarah yang tak lekang oleh waktu.</p>
+</div>
+<div>
+<h4 class="font-title-lg mb-stack-md">Tautan Cepat</h4>
+<ul class="space-y-stack-sm font-body-md">
+<li><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Jelajah Destinasi</a></li>
+<li><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Kalender Event</a></li>
+<li><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Pusat UMKM</a></li>
+<li><a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Sejarah Sultanate</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-lg mb-stack-md">Kontak</h4>
+<ul class="space-y-stack-sm font-body-md text-on-primary/80">
+<li>info@baubau.go.id</li>
+<li>+62 402 123 456</li>
+<li>Jl. Balai Kota No. 1, Baubau</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-on-primary/10 px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-center gap-stack-md">
+<p class="font-body-md text-body-md text-on-primary/60">© 2024 Portal Pariwisata Baubau. Warisan Maritim Nusantara.</p>
+<div class="flex gap-stack-lg">
+<a class="text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">Kebijakan Privasi</a>
+<a class="text-on-primary/60 hover:text-secondary-fixed transition-colors" href="#">Kontak Kami</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for gallery items
+        document.querySelectorAll('.group').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const overlay = item.querySelector('.gallery-overlay');
+                if (overlay) overlay.style.opacity = '1';
+            });
+            item.addEventListener('mouseleave', () => {
+                const overlay = item.querySelector('.gallery-overlay');
+                if (overlay) overlay.style.opacity = '0';
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/95', 'shadow-md');
+                nav.classList.remove('bg-surface/70');
+            } else {
+                nav.classList.remove('bg-white/95', 'shadow-md');
+                nav.classList.add('bg-surface/70');
+            }
+        });
+    </script>
+</body></html>
