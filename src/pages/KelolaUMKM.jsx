@@ -7,6 +7,8 @@ const umkmList = [
   { no: '03', name: 'Jasa Tour Benteng Buton', owner: 'Rahmat Hidayat', category: 'Jasa', status: 'Aktif', date: '05 Nov 2023' },
   { no: '04', name: 'Oleh-oleh Khas Kamali', owner: 'Maria Ulfa', category: 'Kuliner', status: 'Ditolak', date: '10 Nov 2023' },
   { no: '05', name: 'Bengkel Maritim Baubau', owner: 'Budi Santoso', category: 'Lainnya', status: 'Menunggu', date: '15 Nov 2023' },
+  { no: '06', name: 'Homestay Nirwana', owner: 'Samsul Bahri', category: 'Penginapan', status: 'Aktif', date: '20 Nov 2023' },
+  { no: '07', name: 'ButonLens', owner: 'Rizal', category: 'Jasa Fotografi', status: 'Aktif', date: '21 Nov 2023' },
 ];
 
 export default function KelolaUMKM() {
